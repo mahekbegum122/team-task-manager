@@ -141,7 +141,7 @@ export default function Signup() {
   const handleSignup = async () => {
     try {
       await axios.post(
-        "http://localhost:9000/api/auth/signup",
+        "https://team-task-manager-production-fca1.up.railway.app",
         data
       );
 

@@ -107,8 +107,8 @@ try {
 
   const fetchData = async () => {
     try {
-      const taskRes = await axios.get("http://localhost:9000/api/tasks");
-      const projectRes = await axios.get("http://localhost:9000/api/projects");
+      const taskRes = await axios.get("https://team-task-manager-production-fca1.up.railway.app");
+      const projectRes = await axios.get("https://team-task-manager-production-fca1.up.railway.app");
 
       setTasks(taskRes.data);
       setProjects(projectRes.data);

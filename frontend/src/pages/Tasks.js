@@ -274,7 +274,7 @@ export default function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/tasks");
+      const res = await axios.get("https://team-task-manager-production-fca1.up.railway.app");
       setTasks(res.data);
     } catch (err) {
       console.log("Fetch task error:", err);
@@ -292,7 +292,7 @@ export default function Tasks() {
     }
 
     try {
-      await axios.post("http://localhost:9000/api/tasks", {
+      await axios.post("https://team-task-manager-production-fca1.up.railway.app", {
         title,
         status: "Pending",
         priority,
@@ -309,7 +309,7 @@ export default function Tasks() {
   };
 
   const completeTask = async (id) => {
-    await axios.put(`http://localhost:9000/api/tasks/${id}`, {
+    await axios.put(`https://team-task-manager-production-fca1.up.railway.app`, {
       status: "Completed",
     });
 
