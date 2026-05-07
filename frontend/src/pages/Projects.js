@@ -8,7 +8,7 @@ export default function Projects() {
   const [description, setDescription] = useState("");
 
   const fetchProjects = async () => {
-    const res = await axios.get("https://team-task-manager-production-fca1.up.railway.app");
+    const res = await axios.get("http://localhost:9000/api/projects");
     setProjects(res.data);
   };
 
@@ -17,7 +17,7 @@ export default function Projects() {
   }, []);
 
   const createProject = async () => {
-    await axios.post("https://team-task-manager-production-fca1.up.railway.app", {
+    await axios.post("http://localhost:9000/api/projects", {
       name,
       description,
     });
