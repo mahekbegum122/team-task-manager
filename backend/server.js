@@ -14,10 +14,16 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/tasks", require("./routes/taskRoutes"));
 app.use("/api/projects", require("./routes/projectRoutes"));
 
-app.listen(9000, () => {
-  console.log("Server running on port 9000");
+const PORT = process.env.PORT || 9000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
